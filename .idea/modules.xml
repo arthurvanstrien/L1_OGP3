@@ -3,12 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OGP3.iml" filepath="$PROJECT_DIR$/OGP3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OGP3_CollectionPractice/OGP3_CollectionPractice.iml" filepath="$PROJECT_DIR$/OGP3_CollectionPractice/OGP3_CollectionPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OGP3_FileIO_Practice/OGP3_FileIO_Practice.iml" filepath="$PROJECT_DIR$/OGP3_FileIO_Practice/OGP3_FileIO_Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/OGP3_Les1_12.12/OGP3_Les1_12.12.iml" filepath="$PROJECT_DIR$/OGP3_Les1_12.12/OGP3_Les1_12.12.iml" />
       <module fileurl="file://$PROJECT_DIR$/OGP3_Les2_20.11/OGP3_Les2_20.11.iml" filepath="$PROJECT_DIR$/OGP3_Les2_20.11/OGP3_Les2_20.11.iml" />
       <module fileurl="file://$PROJECT_DIR$/OGP3_Les2_20.15/OGP3_Les2_20.15.iml" filepath="$PROJECT_DIR$/OGP3_Les2_20.15/OGP3_Les2_20.15.iml" />
       <module fileurl="file://$PROJECT_DIR$/OGP3_Les3_21.1/OGP3_Les3_21.1.iml" filepath="$PROJECT_DIR$/OGP3_Les3_21.1/OGP3_Les3_21.1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OGP_Les4_18.1/OGP_Les4_18.1.iml" filepath="$PROJECT_DIR$/OGP_Les4_18.1/OGP_Les4_18.1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OGP_Les4_18.3/OGP_Les4_18.3.iml" filepath="$PROJECT_DIR$/OGP_Les4_18.3/OGP_Les4_18.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OGP3_Les4_18.1/OGP3_Les4_18.1.iml" filepath="$PROJECT_DIR$/OGP3_Les4_18.1/OGP3_Les4_18.1.iml" />
+      <module fileurl="file://E:\IntelliJProjects\OGP3\OGP3_Les4_18.3\OGP_Les4_18.3.iml" filepath="E:\IntelliJProjects\OGP3\OGP3_Les4_18.3\OGP_Les4_18.3.iml" />
     </modules>
   </component>
 </project>
