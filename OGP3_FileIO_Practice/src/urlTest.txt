@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js "> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"4702f272e2","agent":"","transactionName":"YgdVbUYHW0tWURFYXVtNcUxaBUFRWFxKUkdHEFJXQDlGUUNXS0dbUBVEF1cJR10NegpcV2UDUFxiD1BPGVUARQ==","applicationID":"45828648","errorBeacon":"bam.nr-data.net","applicationTime":617}</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"4702f272e2","agent":"","transactionName":"YgdVbUYHW0tWURFYXVtNcUxaBUFRWFxKUkdHEFJXQDlGUUNXS0dbUBVEF1cJR10NegpcV2UDUFxiD1BPGVUARQ==","applicationID":"45828648","errorBeacon":"bam.nr-data.net","applicationTime":698}</script>
     <title>NU - Het laatste nieuws het eerst op NU.nl</title>
     <meta name="author" content="" />
     <meta name="apple-itunes-app" content="app-id=382059927" />
@@ -359,7 +359,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper mtop_320">
     <div class="block-content">
-            <div id="cts_484fe4fde964484cb9e3cfad9b3670b4" class="cts-wrapper min320 max480 set-block"><script type="text/javascript"> try {    if(min320 && max480) {        tagging.render("mtop_320");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_1b4322d2191a43c9bbcc17572783e51c" class="cts-wrapper min320 max480 set-block"><script type="text/javascript"> try {    if(min320 && max480) {        tagging.render("mtop_320");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -373,7 +373,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dtop_468">
     <div class="block-content">
-            <div id="cts_11ebffc91ce24a4399eb2a6d0ac4d5de" class="cts-wrapper min480 max768 set-block"><script type="text/javascript"> try {    if(min480 && max768) {        tagging.render("dtop_468");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_933a606cb62b46cb9116e68d835c9c7b" class="cts-wrapper min480 max768 set-block"><script type="text/javascript"> try {    if(min480 && max768) {        tagging.render("dtop_468");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -387,7 +387,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dtop_728">
     <div class="block-content">
-            <div id="cts_eda1742f73e741a5a5e8801d9a3ffe54" class="cts-wrapper min768 max992 set-block"><script type="text/javascript"> try {    if(min768 && max992) {        tagging.render("dtop_728");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_f8bd5cf6f2c44049a37786be749e0210" class="cts-wrapper min768 max992 set-block"><script type="text/javascript"> try {    if(min768 && max992) {        tagging.render("dtop_728");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -401,7 +401,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dtop_970_728">
     <div class="block-content">
-            <div id="cts_400150e8d310479886c61892fc103a97" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dtop_970_728");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_b7b7b693b94542b5bd81a47cbbda2469" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dtop_970_728");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -612,7 +612,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dmid_160_120">
     <div class="block-content">
-            <div id="cts_3ff2c31a4e914650b3dcbe54b5ff144e" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dmid_160_120");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_b7801bc0e83e482593954ccfe1149518" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dmid_160_120");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -681,12 +681,11 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
                         <span class="btn-icon"></span>
                         <span class="dispnone">Vervoer</span>
                         <span class="btn-text">
-                                3
+                                2
                              Files
                         </span>
                         <span class="btn-text dispnone">
-                                1
-                             NS
+                            0 NS
                         </span>
                         <span class="btn-text dispnone">
                             &euro; 1,628
@@ -826,7 +825,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">2 uur geleden</span>
+                    <span class="timestamp">3 uur geleden</span>
                     <span class="section">Algemeen</span>
                     <span class="title-wrapper">
                         <span class="title">Jongen (11) overleden na aanrijding bij oversteken A44</span>
@@ -853,7 +852,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">3 uur geleden</span>
+                    <span class="timestamp">4 uur geleden</span>
                     <span class="section">Algemeen</span>
                     <span class="title-wrapper">
                         <span class="title">Iran legt sancties op aan vijftien Amerikaanse bedrijven</span>
@@ -961,7 +960,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">7 uur geleden</span>
+                    <span class="timestamp">8 uur geleden</span>
                     <span class="section">Algemeen</span>
                     <span class="title-wrapper">
                         <span class="title">Verstappen vijfde in GP Australië, knappe winst Vettel</span>
@@ -988,7 +987,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">8 uur geleden</span>
+                    <span class="timestamp">9 uur geleden</span>
                     <span class="section">Algemeen</span>
                     <span class="title-wrapper">
                         <span class="title">Peking-gezinde kandidaat verkozen tot nieuwe bestuurder Hongkong</span>
@@ -1071,7 +1070,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 23 uren geleden</span>
+                    <span class="timestamp">2 dagen geleden</span>
                     <span class="section">NUweekend</span>
                     <span class="title-wrapper">
                         <span class="title">Herman Koch: &#39;Groupie-achtige aandacht kan spannend zijn&#39;</span>
@@ -1218,7 +1217,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper mbot_320">
     <div class="block-content">
-            <div id="cts_5c4fa50aaf794ab5829202aa592cf3e3" class="cts-wrapper min320 max480 set-block"><script type="text/javascript"> try {    if(min320 && max480) {        tagging.render("mbot_320");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_6bd6d65130eb48408e768b5c12d9bb0c" class="cts-wrapper min320 max480 set-block"><script type="text/javascript"> try {    if(min320 && max480) {        tagging.render("mbot_320");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -1395,7 +1394,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 3 uren geleden</span>
+                    <span class="timestamp">1 dag, 4 uren geleden</span>
                     <span class="section">Economie</span>
                     <span class="title-wrapper">
                         <span class="title">Talpa koopt ondanks oproep redactieraad Telegraaf opnieuw aandelen TMG</span>
@@ -1505,7 +1504,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">23 minuten geleden</span>
+                    <span class="timestamp">48 minuten geleden</span>
                     <span class="section">Sport</span>
                     <span class="title-wrapper">
                         <span class="title">Nederlands elftal traint zonder bondscoach Blind op de Toekomst</span>
@@ -1535,7 +1534,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">2 uur geleden</span>
+                    <span class="timestamp">3 uur geleden</span>
                     <span class="section">Sport</span>
                     <span class="title-wrapper">
                         <span class="title">Horner: &#39;Vettel is Verstappen een biertje schuldig&#39;</span>
@@ -1565,7 +1564,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">37 minuten geleden</span>
+                    <span class="timestamp">een uur geleden</span>
                     <span class="section">Sport</span>
                     <span class="title-wrapper">
                         <span class="title">Basketballers Donar voor vijfde keer winnaar Nederlandse beker</span>
@@ -1625,7 +1624,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">3 uur geleden</span>
+                    <span class="timestamp">4 uur geleden</span>
                     <span class="section">Sport</span>
                     <span class="title-wrapper">
                         <span class="title">FIA-voorzitter Todt wil meer spektakel zien in Formule 1</span>
@@ -1685,7 +1684,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">2 uur geleden</span>
+                    <span class="timestamp">3 uur geleden</span>
                     <span class="section">Sport</span>
                     <span class="title-wrapper">
                         <span class="title">Southgate benadrukt dat interlandloopbaan Rooney nog niet voorbij is</span>
@@ -1857,7 +1856,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">een uur geleden</span>
+                    <span class="timestamp">2 uur geleden</span>
                     <span class="section">Tech</span>
                     <span class="title-wrapper">
                         <span class="title">Britse regering pleit opnieuw voor toegang tot versleutelde berichtenapps </span>
@@ -1911,7 +1910,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">5 uur geleden</span>
+                    <span class="timestamp">6 uur geleden</span>
                     <span class="section">Tech</span>
                     <span class="title-wrapper">
                         <span class="title">Strategiegame StarCraft krijgt heruitgave met 4K-resolutie</span>
@@ -1965,7 +1964,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 1 uur geleden</span>
+                    <span class="timestamp">1 dag, 2 uren geleden</span>
                     <span class="section">Tech</span>
                     <span class="title-wrapper">
                         <span class="title">Vergelijking: welke abonnementsdienst voor e-books is het best?</span>
@@ -1992,7 +1991,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 5 uren geleden</span>
+                    <span class="timestamp">1 dag, 6 uren geleden</span>
                     <span class="section">Tech</span>
                     <span class="title-wrapper">
                         <span class="title">Prul of Praal? Met deze Bluetooth-gadgets vind je je spullen terug</span>
@@ -2019,7 +2018,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 8 uren geleden</span>
+                    <span class="timestamp">1 dag, 9 uren geleden</span>
                     <span class="section">Tech</span>
                     <span class="title-wrapper">
                         <span class="title">Podcast: De AR-bril en &#39;gedachtenlezer&#39; van Facebook</span>
@@ -2189,7 +2188,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">32 minuten geleden</span>
+                    <span class="timestamp">56 minuten geleden</span>
                     <span class="section">Entertainment</span>
                     <span class="title-wrapper">
                         <span class="title">Adele regelmatig uitgescholden door zoontje Angelo</span>
@@ -2216,7 +2215,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">58 minuten geleden</span>
+                    <span class="timestamp">een uur geleden</span>
                     <span class="section">Entertainment</span>
                     <span class="title-wrapper">
                         <span class="title">Producent The Walking Dead hoopt dat serie het twintig seizoenen volhoudt</span>
@@ -2243,7 +2242,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">een uur geleden</span>
+                    <span class="timestamp">2 uur geleden</span>
                     <span class="section">Entertainment</span>
                     <span class="title-wrapper">
                         <span class="title">Elton John op zeventigste verjaardag toegezongen door beroemde vrienden</span>
@@ -2324,7 +2323,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">3 uur geleden</span>
+                    <span class="timestamp">4 uur geleden</span>
                     <span class="section">Entertainment</span>
                     <span class="title-wrapper">
                         <span class="title">&#39;Snoop Dogg brengt eerbetoon aan Tupac Shakur bij Hall of Fame-ceremonie&#39;</span>
@@ -2351,7 +2350,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">5 uur geleden</span>
+                    <span class="timestamp">6 uur geleden</span>
                     <span class="section">Entertainment</span>
                     <span class="title-wrapper">
                         <span class="title">OITNB-actrice Samira Wiley getrouwd met Lauren Morelli</span>
@@ -2467,7 +2466,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">44 minuten geleden</span>
+                    <span class="timestamp">een uur geleden</span>
                     <span class="section">Lifestyle</span>
                     <span class="title-wrapper">
                         <span class="title">&#39;Buitenlandse fastfoodketens moeten concept niet vernederlandsen&#39;</span>
@@ -2494,7 +2493,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">5 uur geleden</span>
+                    <span class="timestamp">6 uur geleden</span>
                     <span class="section">Lifestyle</span>
                     <span class="title-wrapper">
                         <span class="title">Borrelhap op terras is &#39;deelbaar en fotogeniek&#39;</span>
@@ -2548,7 +2547,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 22 uren geleden</span>
+                    <span class="timestamp">1 dag, 23 uren geleden</span>
                     <span class="section">Lifestyle</span>
                     <span class="title-wrapper">
                         <span class="title">Supermarktketen ALDI waarschuwt voor maissnack</span>
@@ -2575,7 +2574,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 5 uren geleden</span>
+                    <span class="timestamp">1 dag, 6 uren geleden</span>
                     <span class="section">Lifestyle</span>
                     <span class="title-wrapper">
                         <span class="title">Wijntrends: fruitige rosé en fris wit worden zomerfavorieten</span>
@@ -2602,7 +2601,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 23 uren geleden</span>
+                    <span class="timestamp">2 dagen geleden</span>
                     <span class="section">Lifestyle</span>
                     <span class="title-wrapper">
                         <span class="title">Nijmeegs ziekenhuis gedeeltelijk vrij van MRSA</span>
@@ -2656,7 +2655,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 23 uren geleden</span>
+                    <span class="timestamp">2 dagen geleden</span>
                     <span class="section">Lifestyle</span>
                     <span class="title-wrapper">
                         <span class="title">&#39;Hersenscans kunnen helpen bij keuze voor behandeling van depressie&#39;</span>
@@ -2799,7 +2798,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">12 uur geleden</span>
+                    <span class="timestamp">13 uur geleden</span>
                     <span class="section">Reizen</span>
                     <span class="title-wrapper">
                         <span class="title">Contant betalen niet meer mogelijk in Amsterdamse bussen</span>
@@ -2907,7 +2906,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="list-overlay">
                 <span class="info">
-                    <span class="timestamp">1 dag, 6 uren geleden</span>
+                    <span class="timestamp">1 dag, 7 uren geleden</span>
                     <span class="section">Dieren</span>
                     <span class="title-wrapper">
                         <span class="title">&#39;Voortbestaan zeldzame runderrassen in gevaar&#39;</span>
@@ -3416,8 +3415,8 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             <div class="clear"></div>
             <div class="tab tab-1 active">
                 <div
-    id="block-c01ec7dd52f9407985c4db4cb0821015"
-    data-id="block-c01ec7dd52f9407985c4db4cb0821015"
+    id="block-5057b5b4f5e4481aac2b50e0955e2abd"
+    data-id="block-5057b5b4f5e4481aac2b50e0955e2abd"
     data-position=""
     data-type="mostrecent"
     class="block mostrecent"
@@ -3501,8 +3500,8 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
             <div class="tab tab-2">
                 <div
-    id="block-16dbb478786049768f1e7e1df9f2e0f0"
-    data-id="block-16dbb478786049768f1e7e1df9f2e0f0"
+    id="block-d80973deb6ba4eb08fc2d4a95eff028f"
+    data-id="block-d80973deb6ba4eb08fc2d4a95eff028f"
     data-position=""
     data-type="mostread"
     class="block mostread"
@@ -3517,52 +3516,52 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
             </div>
         <div class="block-content">
             <ul>
-                    <li class="hasvideo hasslideshow " data-sac-marker="articlelist.mostread.1">
+                    <li class="  " data-sac-marker="articlelist.mostread.1">
                         <div class="list-content">
-                            <a href="/voetbal/4570266/wk-ver-weg-nederlands-elftal-blamage-in-bulgarije.html" title="WK ver weg voor Nederlands elftal na blamage in Bulgarije" class="trackevent" >
+                            <a href="/voetbal/4570077/liveblog-reacties-pijnlijke-nederlaag-oranje-in-bulgarije-gesloten.html" title="Liveblog: Reacties na pijnlijke nederlaag Oranje in Bulgarije (gesloten)" class="trackevent" >
                                 <div class="list-overlay">
                                     <span class="info">
                                         <span class="ranking">1.</span>
-                                        <span class="title">WK ver weg voor Nederlands elftal na blamage in Bulgarije</span>
+                                        <span class="title">Liveblog: Reacties na pijnlijke nederlaag Oranje in Bulgarije (gesloten)</span>
                                     </span>
                                 </div>
                             </a>
                             <div class="clear"></div>
                         </div>
                     </li>
-                    <li class="hasvideo hasslideshow " data-sac-marker="articlelist.mostread.2">
+                    <li class="  " data-sac-marker="articlelist.mostread.2">
                         <div class="list-content">
-                            <a href="/formule-1/4570566/verstappen-vijfde-in-gp-australie-knappe-winst-vettel.html" title="Verstappen vijfde in GP Australië, knappe winst Vettel" class="trackevent" >
+                            <a href="/achterklap/4569810/amber-heard-kreeg-advies-zwijgen-geaardheid.html" title="Amber Heard kreeg advies om te zwijgen over geaardheid" class="trackevent" >
                                 <div class="list-overlay">
                                     <span class="info">
                                         <span class="ranking">2.</span>
-                                        <span class="title">Verstappen vijfde in GP Australië, knappe winst Vettel</span>
+                                        <span class="title">Amber Heard kreeg advies om te zwijgen over geaardheid</span>
                                     </span>
                                 </div>
                             </a>
                             <div class="clear"></div>
                         </div>
                     </li>
-                    <li class="hasvideo  " data-sac-marker="articlelist.mostread.3">
+                    <li class=" hasslideshow " data-sac-marker="articlelist.mostread.3">
                         <div class="list-content">
-                            <a href="/economie/4570548/zo-kun-als-woningeigenaar-geld-terugkrijgen-van-belastingdienst.html" title="Zo kun je als woningeigenaar geld terugkrijgen van De Belastingdienst" class="trackevent" >
+                            <a href="/binnenland/4570113/rijkswaterstaat-waarschuwt-grote-verkeershinder-zondag-a1.html" title="Rijkswaterstaat waarschuwt voor grote verkeershinder zondag op A1" class="trackevent" >
                                 <div class="list-overlay">
                                     <span class="info">
                                         <span class="ranking">3.</span>
-                                        <span class="title">Zo kun je als woningeigenaar geld terugkrijgen van De Belastingdienst</span>
+                                        <span class="title">Rijkswaterstaat waarschuwt voor grote verkeershinder zondag op A1</span>
                                     </span>
                                 </div>
                             </a>
                             <div class="clear"></div>
                         </div>
                     </li>
-                    <li class="  " data-sac-marker="articlelist.mostread.4">
+                    <li class="hasvideo  " data-sac-marker="articlelist.mostread.4">
                         <div class="list-content">
-                            <a href="/algemeen/4570620/tientallen-meldingen-bij-defensie-van-bedreiging-militair.html" title="Tientallen meldingen bij Defensie van bedreiging militair" class="trackevent" >
+                            <a href="/binnenland/4569744/onderzoek-behandeling-tbser-verdacht-van-moord-arnhem.html" title="Onderzoek naar behandeling tbs&#39;er verdacht van moord Arnhem" class="trackevent" >
                                 <div class="list-overlay">
                                     <span class="info">
                                         <span class="ranking">4.</span>
-                                        <span class="title">Tientallen meldingen bij Defensie van bedreiging militair</span>
+                                        <span class="title">Onderzoek naar behandeling tbs&#39;er verdacht van moord Arnhem</span>
                                     </span>
                                 </div>
                             </a>
@@ -3598,7 +3597,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dmid_300_h300">
     <div class="block-content">
-            <div id="cts_d04deb27bf12407da90eadcfe4e7c880" class="cts-wrapper min768 max992 set-block"><script type="text/javascript"> try {    if(min768 && max992) {        tagging.render("dmid_300_h300");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_eddd1713e0764cd89a13fde52866c8c8" class="cts-wrapper min768 max992 set-block"><script type="text/javascript"> try {    if(min768 && max992) {        tagging.render("dmid_300_h300");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -3612,7 +3611,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dmid_300_h300_336">
     <div class="block-content">
-            <div id="cts_6521944449544885b6133ccf140afba7" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dmid_300_h300_336");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_506f1160edff4ff5997bafecc5261a62" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dmid_300_h300_336");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -4960,7 +4959,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dmid_300_336_p2">
     <div class="block-content">
-            <div id="cts_fd93af3a43d1429b855d605d24185379" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dmid_300_336_p2");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_4fe234e9b13a4a7ebd69083797a7eaa3" class="cts-wrapper min992 set-block"><script type="text/javascript"> try {    if(min992) {        tagging.render("dmid_300_336_p2");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -4974,7 +4973,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dmid_300_p2">
     <div class="block-content">
-            <div id="cts_b768af8c19b6453cbd052fe841e63b71" class="cts-wrapper min768 max992 set-block"><script type="text/javascript"> try {    if(min768 && max992) {        tagging.render("dmid_300_p2");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_4fd0b7cadf8c4963ad97ba21a2c19dd5" class="cts-wrapper min768 max992 set-block"><script type="text/javascript"> try {    if(min768 && max992) {        tagging.render("dmid_300_p2");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -6369,16 +6368,16 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
                 <form class="newsletterForm"
                       action="http://service.sanoma.com/optiext/optiextension.dll?id=szpkd5tEXlqawCP8dpAeIH6ctrKn09RZ6RIplGJ2B7aNvhPBuwhd97NX6LoNgIraSgTmPVbKhjm4QIeIrpsssi"
                       method="post"
-                      target="frame807539080014">
+                      target="frame213152761885">
                     <div class="text_input">
-                        <label for="MAIL807539080014">E-mailadres</label>
-                        <input type="email" name="MAIL" class="input90" id="MAIL807539080014" maxlength="100"
+                        <label for="MAIL213152761885">E-mailadres</label>
+                        <input type="email" name="MAIL" class="input90" id="MAIL213152761885" maxlength="100"
                                required="required"/>
                         <div class="errortext">Er is geen of een ongeldig e-mailadres ingevoerd.</div>
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" id="OPTIN_ACTIE807539080014" value="1" name="OPTIN_ACTIE"/>
+                            <input type="checkbox" id="OPTIN_ACTIE213152761885" value="1" name="OPTIN_ACTIE"/>
                             Ja, ik ontvang graag leuke acties en aanbiedingen van NU.nl en
                             <a target="_blank" title="Klik hier voor een overzicht van Sanoma/SBS, titels en producten."
                                href="http://www.sanoma.nl/merken/">Sanoma/SBS</a>
@@ -6386,7 +6385,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" value="1" id="OPTIN_COMMERCIEEL807539080014" name="OPTIN_COMMERCIEEL">
+                            <input type="checkbox" value="1" id="OPTIN_COMMERCIEEL213152761885" name="OPTIN_COMMERCIEEL">
                             Ja, ik ontvang graag leuke acties en aanbiedingen van derden via e-mail, die mij worden
                             gestuurd vanuit NU.nl.
                         </label>
@@ -6397,7 +6396,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
                                 class="col-min480 set-inline"> van Sanoma en SBS</span></a> is van toepassing.
                         </span>
                         <input type="checkbox" value="1" name="DAGELIJKS" checked="checked" class="dispnone"/>
-                        <input type="submit" id="newsletterSubmit807539080014" value="Verzenden" class="trackevent"
+                        <input type="submit" id="newsletterSubmit213152761885" value="Verzenden" class="trackevent"
                                name="submit" data-trackeventlabel="newsletter-signup" />
                     </div>
                 </form>
@@ -6408,7 +6407,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
                         Klik in de e-mail op de bevestigingslink om jouw inschrijving te voltooien.
                     </p>
                 </div>
-                <iframe name="frame807539080014" class="dispnone"></iframe>
+                <iframe name="frame213152761885" class="dispnone"></iframe>
             </div>
         </div>
     </div>
@@ -6486,7 +6485,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dbot_468">
     <div class="block-content">
-            <div id="cts_a1b78daba13140fa9afaaf18f5b80a5b" class="cts-wrapper min480 max768 set-block"><script type="text/javascript"> try {    if(min480 && max768) {        tagging.render("dbot_468");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_9a05039436974a4c8bc22e8c7adea223" class="cts-wrapper min480 max768 set-block"><script type="text/javascript"> try {    if(min480 && max768) {        tagging.render("dbot_468");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
@@ -6500,7 +6499,7 @@ var context_dc_params = 'CATEGORY=home;KEYWORDS=;',
 >
 <div class="block-wrapper dbot_728">
     <div class="block-content">
-            <div id="cts_3e8c3f948cd54ab4acf26692c5cc3ec9" class="cts-wrapper min768 set-block"><script type="text/javascript"> try {    if(min768) {        tagging.render("dbot_728");    } } catch(err) {    console.log(err) } </script></div>
+            <div id="cts_c11f0e4500b34d7b9bbdf693420855a9" class="cts-wrapper min768 set-block"><script type="text/javascript"> try {    if(min768) {        tagging.render("dbot_728");    } } catch(err) {    console.log(err) } </script></div>
     </div>
 </div>
 </div>
