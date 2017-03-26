@@ -16,7 +16,7 @@ public class CollectionPractice
         arrayToList();
         System.out.println("---Running List to Array-------------------------------------------");
         arrayToList();
-        System.out.println("---Stack-------------------------------------------");
+        System.out.println("---Running Stack-------------------------------------------");
         stack();
     }
 
